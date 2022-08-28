@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"program/service"
 
 	"github.com/jedib0t/go-pretty/v6/table"
 )
@@ -75,18 +76,11 @@ func PostCourse(w http.ResponseWriter, r *http.Request) {
 	}
 
 	file, _ := json.MarshalIndent(courses, "", " 	")
-	_ = ioutil.WriteFile("courses.json", file, 0644)
+	service.WriteFile(file)
 }
 
 func ViewCourses(w http.ResponseWriter, r *http.Request) {
-	fileContent, err := os.ReadFile("courses.json")
-
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-
-	fmt.Fprintln(w, "File successfully opened")
+	fileContent := service.ReadFile()
 
 	var courses Courses
 	json.Unmarshal(fileContent, &courses)
@@ -111,12 +105,7 @@ func PlanCourses(w http.ResponseWriter, r *http.Request) {
 		Friday:    []string{"Empty", "Empty", "Empty", "Empty", "Empty", "Empty", "Empty", "Empty", "Empty", "Empty"},
 	}
 
-	fileContent, err := os.ReadFile("courses.json")
-
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
+	fileContent := service.ReadFile()
 
 	//Assign shortened versions of table parts
 	mon := courseTable.Monday
@@ -160,7 +149,7 @@ func PlanCourses(w http.ResponseWriter, r *http.Request) {
 func checkTimeslots(timeslots []string, days []int, dayName string, courseName string) []string {
 	for i := 0; i < 10; i++ {
 		if timeslots[i] != "Empty" && days[i] == 1 {
-			log.Fatal("Timeslot on " + dayName + " already full by " + courseName)
+			fmt.Print("Timeslot on " + dayName + " already full by " + courseName)
 		} else if timeslots[i] == "Empty" && days[i] == 1 {
 			timeslots[i] = courseName
 		}
