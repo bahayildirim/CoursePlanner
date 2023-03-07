@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Course Planner</title>
+    </head>
+    <body>
+        <div>
+            <form action="http://localhost:8000/courses">
+                <input type="submit" value="View Courses"><br>
+            </form>
+        </div> <br>
+
+        <div>
+            <form action="http://localhost:8000/plancourses">
+                <input type="submit" value="Plan Courses"><br>
+            </form>
+        </div><br>
+
+        <div>
+            <form name="timeslots" action="http://localhost:8000/addcourse" method="POST">
+                <label>Course Name:</label>
+                <input type="text" name="coursename"><br>
+                <label>Course Timeslots:</label><br>
+                <label>M&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;&nbsp;F</label><br>
+                <input type="checkbox" name="monday" value="9:30-10:20">
+                <input type="checkbox" name="tuesday" value="9:30-10:20">
+                <input type="checkbox" name="wednesday" value="9:30-10:20">
+                <input type="checkbox" name="thursday" value="9:30-10:20">
+                <input type="checkbox" name="friday" value="9:30-10:20">
+                <label> 9:30-10:20</label><br>
+                <input type="checkbox" name="monday" value="10:30-11:20">
+                <input type="checkbox" name="tuesday" value="10:30-11:20">
+                <input type="checkbox" name="wednesday" value="10:30-11:20">
+                <input type="checkbox" name="thursday" value="10:30-11:20">
+                <input type="checkbox" name="friday" value="10:30-11:20">
+                <label> 10:30-11:20</label><br>
+                <input type="checkbox" name="monday" value="11:30-12:20">
+                <input type="checkbox" name="tuesday" value="11:30-12:20">
+                <input type="checkbox" name="wednesday" value="11:30-12:20">
+                <input type="checkbox" name="thursday" value="11:30-12:20">
+                <input type="checkbox" name="friday" value="11:30-12:20">
+                <label> 11:30-12:20</label><br>
+                <input type="checkbox" name="monday" value="12:30-13:20">
+                <input type="checkbox" name="tuesday" value="12:30-13:20">
+                <input type="checkbox" name="wednesday" value="12:30-13:20">
+                <input type="checkbox" name="thursday" value="12:30-13:20">
+                <input type="checkbox" name="friday" value="12:30-13:20">
+                <label> 12:30-13:20</label><br>
+                <input type="checkbox" name="monday" value="13:30-14:20">
+                <input type="checkbox" name="tuesday" value="13:30-14:20">
+                <input type="checkbox" name="wednesday" value="13:30-14:20">
+                <input type="checkbox" name="thursday" value="13:30-14:20">
+                <input type="checkbox" name="friday" value="13:30-14:20">
+                <label> 13:30-14:20</label><br>
+                <input type="checkbox" name="monday" value="14:30-15:20">
+                <input type="checkbox" name="tuesday" value="14:30-15:20">
+                <input type="checkbox" name="wednesday" value="14:30-15:20">
+                <input type="checkbox" name="thursday" value="14:30-15:20">
+                <input type="checkbox" name="friday" value="14:30-15:20">
+                <label> 14:30-15:20</label><br>
+                <input type="checkbox" name="monday" value="15:30-16:20">
+                <input type="checkbox" name="tuesday" value="15:30-16:20">
+                <input type="checkbox" name="wednesday" value="15:30-16:20">
+                <input type="checkbox" name="thursday" value="15:30-16:20">
+                <input type="checkbox" name="friday" value="15:30-16:20">
+                <label> 15:30-16:20</label><br>
+                <input type="checkbox" name="monday" value="16:30-17:20">
+                <input type="checkbox" name="tuesday" value="16:30-17:20">
+                <input type="checkbox" name="wednesday" value="16:30-17:20">
+                <input type="checkbox" name="thursday" value="16:30-17:20">
+                <input type="checkbox" name="friday" value="16:30-17:20">
+                <label> 16:30-17:20</label><br>
+                <input type="checkbox" name="monday" value="17:30-18:20">
+                <input type="checkbox" name="tuesday" value="17:30-18:20">
+                <input type="checkbox" name="wednesday" value="17:30-18:20">
+                <input type="checkbox" name="thursday" value="17:30-18:20">
+                <input type="checkbox" name="friday" value="17:30-18:20">
+                <label> 17:30-18:20</label><br>
+                <input type="checkbox" name="monday" value="18:30-19:20">
+                <input type="checkbox" name="tuesday" value="18:30-19:20">
+                <input type="checkbox" name="wednesday" value="18:30-19:20">
+                <input type="checkbox" name="thursday" value="18:30-19:20">
+                <input type="checkbox" name="friday" value="18:30-19:20">
+                <label> 18:30-19:20</label><br>
+                <input type="submit" value="Add Course"><br>
+            </form>
+        </div><br>
+
+        <div>
+            <form action="http://localhost:8000/deletecourse" method="POST">
+                <label>Course Name:</label>
+                <input type="text" name="coursename"><br>
+                <input type="submit" value="Delete Course"><br>
+            </form>
+        </div>
+         
+    </form>
+    </body>
+</html>
